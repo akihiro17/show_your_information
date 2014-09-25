@@ -1,0 +1,7 @@
+{
+  "name": "Show your informationw",
+  "description": "Show your information, such as ip address, referrer and so on",
+  "repository": "https://github.com/akihiro17/show_your_information.git",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["ruby"]
+}
