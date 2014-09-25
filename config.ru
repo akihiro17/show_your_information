@@ -1,2 +1,2 @@
-require 'rack'
+require './rack'
 run Sinatra::Application
