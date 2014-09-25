@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" >
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<body>
+  <div class="hero-unit">
+    <h1 class="text-center">show your information</h1>
+  </div>
+  <div class="row">
+    <div class="span6 offset5">
+      <table class="table">
+        <tr>
+          <th>variable</td>
+          <th>value</td>
+        </tr>
+        <tr>
+          <td>ip address</td>
+          <td class="text-error"><strong><%= h ip %></strong></td>
+        </tr>
+        <tr>
+          <td>referrer</td>
+          <td class="text-warning"><%= h referrer  %></td>
+        </tr>
+        <tr>
+          <td>user_agent</td>
+          <td class="text-success"><%= h user_agent  %></td>
+        </tr>
+        <tr>
+          <td>plugins</td>
+          <td id="plugins"></td>
+        </tr>        
+      </table>
+    </div>
+  </div>
+<script type="text/javascript">
+numPlugins = navigator.plugins.length;
+
+if (numPlugins > 0)
+  document.writeln("Installed plug-ins");
+else
+ document.writeln("No plug-ins are installed.");
+
+inner = ""
+for (i = 0; i < numPlugins; i++) {
+ plugin = navigator.plugins[i];
+
+ inner = inner + "<tr><td>" + plugin.name + "</tr></td>";
+}
+
+if (numPlugins > 0) {
+  document.getElementById("plugins").innerHTML = "<table>" + inner + "<table>";
+}
+
+</script>  
+</body>
+</html>
